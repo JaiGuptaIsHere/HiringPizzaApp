@@ -1,0 +1,193 @@
+.fullCard {
+  height: 30vh;
+  width: 80vw;
+  margin: 10vh 10vw;
+  border: 3px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.orderPage {
+  display: none;
+}
+
+.cartPageHeading {
+  background-color: red;
+  width: 90vw;
+  margin: 4vh 0;
+  margin-left: 4.5vw;
+  border: 4px solid black;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.quantityInput {
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 25px;
+  margin-top: 10px;
+  padding-left: 10px;
+  width: 150px;
+}
+
+.cartPageHeading h2 {
+  font-size: 40px;
+  word-spacing: 5px;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 7vh;
+  justify-content: space-around;
+  margin: 10px;
+  padding: 5px;
+  margin-bottom: 0;
+  border: 4px solid black;
+  border-radius: 25px;
+  margin-top: 20px;
+  background-color: grey;
+}
+
+.stayOnTop {
+  position: fixed;
+  top: 125px;
+}
+
+.popup {
+  background-color: grey;
+  width: 40vw;
+  height: 40vh;
+  margin-left: 30%;
+  border: 4px solid black;
+  border-radius: 25px;
+  border-top-right-radius: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.selectSize p {
+  font-size: 25px;
+}
+
+.chooseToppings {
+  margin-right: 30px;
+}
+
+.chooseToppings p {
+  font-size: 25px;
+}
+.customizations {
+  display: flex;
+  justify-content: space-between;
+}
+
+.selectSize {
+  margin-left: 30px;
+}
+
+.menuButton:hover {
+  background-color: rgb(112, 112, 201);
+  cursor: pointer;
+}
+
+.addWidget:hover {
+  background-color: rgb(112, 112, 201);
+  cursor: pointer;
+}
+
+.sizeOption {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: cursive;
+}
+
+.toppingOption {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: cursive;
+}
+
+.popupControls {
+  margin-right: 30px;
+  margin-left: 0;
+  padding: 10px;
+  font-size: 20px;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: rgb(14, 130, 240);
+}
+.selectedPizza {
+  background-color: rgb(69, 69, 101);
+  align-items: center;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+}
+
+.selectedPizzaName {
+  font-size: 30px;
+  margin-left: 10px;
+}
+
+.menuButton {
+  margin: 2px;
+  border: 4px solid black;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: white;
+}
+
+.veg {
+  background-image: url("https://t3.ftcdn.net/jpg/04/27/51/98/240_F_427519833_iDb8YGyP2jsMMEpyYXV6oyagebNmaDC9.jpg");
+}
+
+.nonVeg {
+  background-image: url("https://img.freepik.com/premium-photo/red-steel-mesh-texture-background_469558-25769.jpg?size=626&ext=jpg&ga=GA1.1.625112483.1681548739&semt=ais");
+}
+
+.image {
+  height: 25vh;
+  width: 20vw;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.allDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.detail {
+  margin: 3px;
+  font-family: cursive;
+  font-size: 20px;
+}
+
+.name {
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.addOption {
+  display: flex;
+  flex-direction: row;
+}
+
+.addWidget {
+  border: 3px solid black;
+  border-radius: 10px;
+  font-size: 25px;
+  background-color: whitesmoke;
+  padding: 5px;
+}

@@ -1,0 +1,18 @@
+.fullHeader {
+  height: 10vh;
+  margin: 5px;
+  border: 5px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: yellow;
+}
+
+.appTitle {
+  font-family: cursive;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}

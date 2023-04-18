@@ -1,0 +1,89 @@
+.allOrders {
+  width: 80vw;
+  margin: 0 10vw;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: rgb(202, 221, 126);
+}
+
+.orderUnits {
+  color: black;
+  background-color: white;
+  height: 40px;
+  width: 60px;
+  border: 1px solid black;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.orderUnitsValue {
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.isVeg {
+  background-color: green;
+  color: white;
+}
+
+.isNonVeg {
+  background-color: red;
+  color: white;
+}
+
+.orderName {
+  font-weight: 700;
+  font-size: 40px;
+  letter-spacing: 1px;
+  font-family: cursive;
+}
+
+.orderDetailsFormat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+
+.orderToppingsValue {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.orderPriceLabel {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.orderPriceValue {
+  font-size: 25px;
+  font-weight: 450;
+}
+
+.orderSizeValue {
+  font-size: 25px;
+  font-weight: 450;
+}
+
+.orderToppingsValue {
+  font-size: 25px;
+  font-weight: 450;
+}
+
+.orderSizeLabel {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.orderToppingsLabel {
+  font-size: 30px;
+  font-weight: 500;
+}
