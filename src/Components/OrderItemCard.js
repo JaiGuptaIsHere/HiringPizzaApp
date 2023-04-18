@@ -19,27 +19,20 @@ function OrderItemCard(props) {
         let isVeg = pizza.isVeg;
         let size = pizza.size;
         let price = pizza.price;
-        let midToppings = pizza.toppings;
-        let isSingleTopping = pizza.singleTopping;
-        let toppings = [];
-        if (midToppings.length === 0) {
-          toppings.push("No Topping Chosen");
-        } else if (isSingleTopping) {
-          toppings.push(midToppings.at(0));
-        } else {
-          toppings = midToppings;
-        }
+        let toppings = pizza.toppings;
+       
 
         return (
           <div className="allOrders">
             <div className={`orderUnits ${isVeg ? "isVeg" : "isNonVeg"}`}>
               <div className="orderUnitsValue">{unit}</div>
+
             </div>
             <div className="orderName">{name}</div>
             <div>
               <div className="orderPrice orderDetailsFormat">
                 <div className="orderPriceLabel">Price</div>
-                <div className="orderPriceValue">{`Rs. ${price}`}</div>
+                <div className="orderPriceValue">{`Rs. ${price*unit}`}</div>
               </div>
               <div className="orderSize orderDetailsFormat">
                 <div className="orderSizeLabel">Size</div>
