@@ -2,6 +2,8 @@ import "./Card.css";
 import { useState } from "react";
 import Footer from "./Footer";
 import OrderItemCard from "./OrderItemCard";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar, faStarHalf } from "@fortawesome/free-solid-svg-icons";
 
 function Card(props) {
   const [showCart, setShowCart] = useState(false);
@@ -74,20 +76,38 @@ function Card(props) {
       setSelectedToppings([...selectedToppings, e.target.value]);
     }
   }
-
+let temp = false;
   function finalAdd() {
+    let tempToppings = [];
+    if(currentPizzaTopping === true){
+      tempToppings[0] = selectedToppings.at(0);
+    }else if(selectedToppings.length === 0){
+      tempToppings.push("No Topping Chosen")
+    }else{
+      tempToppings = [...selectedToppings];
+    }
+    for(let pizza of pizzasToBuy){
+      if(pizza.toppings.sort().toString() === tempToppings.sort().toString() && currentPizza === pizza.name && pizza.size === currentPizzaSize){
+        temp = true;
+      let existingUnits = parseInt(pizza.unit);
+      pizza.unit = existingUnits + parseInt(pizzaUnit);
+      break;
+      }
+    }
+
     const tempPizza = {
       unit: pizzaUnit,
       name: currentPizza,
       id: currentPizzaID,
       size: currentPizzaSize,
-      toppings: selectedToppings,
+      toppings: tempToppings,
       isVeg: veg,
       price: currentPizzaPrice,
       singleTopping: currentPizzaTopping,
     };
 
-    setPizzasToBuy([...pizzasToBuy, tempPizza]);
+    {!temp && 
+    setPizzasToBuy([...pizzasToBuy, tempPizza]) }
     setPizzaUnit(1);
     isShowPopup(false);
     isCurrentPizza("");
@@ -98,9 +118,11 @@ function Card(props) {
     setSelectedToppings([]);
     isCurrentPizzaTopping(true);
     setPizzaUnit(1);
+    temp = false;
   }
 
   function closePopup() {
+    temp = false;
     isShowPopup(false);
     isCurrentPizzaID(0);
     setVeg(true);
@@ -282,12 +304,61 @@ function Card(props) {
             isCurrentPizzaID(id);
             isCurrentPizzaTopping(toppingVariety);
           }
+
+          const stars = [];
+          stars[0] = (
+            <div>
+              {" "}
+              <FontAwesomeIcon icon={faStar} style={{ color: "#0d0d0d" }} />
+              <FontAwesomeIcon icon={faStar} style={{ color: "#0d0d0d" }} />
+              <FontAwesomeIcon icon={faStar} style={{ color: "#0d0d0d" }} />
+              <FontAwesomeIcon icon={faStarHalf} style={{ color: "#0d0d0d" }} />
+            </div>
+          );
+
+          stars[1] = (
+            <div>
+              {" "}
+              <FontAwesomeIcon icon={faStar} style={{ color: "#0d0d0d" }} />
+              <FontAwesomeIcon icon={faStar} style={{ color: "#0d0d0d" }} />
+              <FontAwesomeIcon icon={faStar} style={{ color: "#0d0d0d" }} />
+              <FontAwesomeIcon icon={faStar} style={{ color: "#0d0d0d" }} />
+            </div>
+          );
+
+          stars[2] = (
+            <div>
+              {" "}
+              <FontAwesomeIcon icon={faStar} style={{ color: "#0d0d0d" }} />
+              <FontAwesomeIcon icon={faStar} style={{ color: "#0d0d0d" }} />
+              <FontAwesomeIcon icon={faStar} style={{ color: "#0d0d0d" }} />
+              <FontAwesomeIcon icon={faStar} style={{ color: "#0d0d0d" }} />
+              <FontAwesomeIcon icon={faStarHalf} style={{ color: "#0d0d0d" }} />
+            </div>
+          );
+
+          stars[3] = (
+            <div>
+              {" "}
+              <FontAwesomeIcon icon={faStar} style={{ color: "#0d0d0d" }} />
+              <FontAwesomeIcon icon={faStar} style={{ color: "#0d0d0d" }} />
+              <FontAwesomeIcon icon={faStar} style={{ color: "#0d0d0d" }} />
+              <FontAwesomeIcon icon={faStar} style={{ color: "#0d0d0d" }} />
+              <FontAwesomeIcon icon={faStar} style={{ color: "#0d0d0d" }} />
+            </div>
+          );
+
           return (
             <div className={`fullCard ${isVeg ? "veg" : "nonVeg"}`}>
               <div className="allDetails">
                 <div className="name detail">{name}</div>
                 <div className="price detail">{`Rs. ${price}`}</div>
-                <div className="rating detail">{`${rating}/5 Stars`}</div>
+                <div className="rating detail">
+                  {rating === 3.5 && stars[0]}
+                  {rating === 4 && stars[1]}
+                  {rating === 4.5 && stars[2]}
+                  {rating === 5 && stars[3]}
+                </div>
                 <div className="description detail">
                   {description.substring(0, descriptionBreak)}
                   <br></br>
